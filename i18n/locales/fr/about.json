@@ -1,0 +1,12 @@
+﻿{
+    "about":  {
+                  "title":  "A PROPOS",
+                  "intro":  "Etudiant chez Sup de Vinci a Bordeaux, je suis passionne par l\u0027informatique et ses possibilites.",
+                  "vision":  "J\u0027aime concevoir des solutions utiles, du front au back, et donner vie a des idees concretes.",
+                  "goal":  "Mon objectif : explorer, experimenter et contribuer a des projets qui ont du sens.",
+                  "buttons":  {
+                                  "contact":  "Me Contacter",
+                                  "download_cv":  "Telecharger CV"
+                              }
+              }
+}

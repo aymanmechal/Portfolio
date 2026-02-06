@@ -1,0 +1,33 @@
+﻿{
+  "parcours": {
+    "title": "EDUCATION",
+    "items": {
+      "0": {
+        "date": "2021 - 2024",
+        "title": "High School - Philippe Cousteau",
+        "lines": [
+          "NSI - Math - Physics Chemistry",
+          "Advanced Math option",
+          "General baccalaureate, honors"
+        ]
+      },
+      "1": {
+        "date": "2024 - 2025",
+        "title": "IUT Montpellier - Sète",
+        "lines": [
+          "BUT Computer Science (1st year)",
+          "Intro to programming and project management"
+        ]
+      },
+      "2": {
+        "date": "2025 - 2028",
+        "title": "Sup de vinci - Bordeaux",
+        "lines": [
+          "Bachelor in Computer Science",
+          "Intro to programming",
+          "Networks and operating systems basics"
+        ]
+      }
+    }
+  }
+}

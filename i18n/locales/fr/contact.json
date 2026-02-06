@@ -1,0 +1,19 @@
+﻿{
+  "contact": {
+    "form": {
+      "fields": {
+        "name": "Nom",
+        "email": "Email",
+        "subject": "Objet",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Nom",
+        "email": "Email",
+        "subject": "Objet",
+        "message": "Message"
+      },
+      "button": "Envoyer"
+    }
+  }
+}

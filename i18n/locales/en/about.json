@@ -1,0 +1,12 @@
+﻿{
+    "about":  {
+                  "title":  "ABOUT",
+                  "intro":  "Student at Sup de Vinci in Bordeaux, I am passionate about computing and its possibilities.",
+                  "vision":  "I like building useful solutions, from front to back, and bringing ideas to life.",
+                  "goal":  "My goal: explore, experiment, and contribute to projects that matter.",
+                  "buttons":  {
+                                  "contact":  "Contact Me",
+                                  "download_cv":  "Download CV"
+                              }
+              }
+}

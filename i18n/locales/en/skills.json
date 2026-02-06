@@ -1,0 +1,21 @@
+﻿{
+  "skills": {
+    "title": "SKILLS",
+    "tools_title": "Tools & Design",
+    "dev_title": "Development",
+    "tools": {
+      "vscode": "VS Code",
+      "git": "Git",
+      "canva": "Canva",
+      "figma": "Figma",
+      "photoshop": "Photoshop"
+    },
+    "dev": {
+      "python": "Python",
+      "java": "Java",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript"
+    }
+  }
+}

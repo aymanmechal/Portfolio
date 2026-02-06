@@ -1,0 +1,16 @@
+﻿{
+    "header":  {
+                   "login":  {
+                                 "title":  "Connexion",
+                                 "email":  "Email",
+                                 "password":  "Mot de passe",
+                                 "button":  "Login",
+                                 "register":  "register"
+                             },
+                   "lang":  {
+                                "title":  "Langue",
+                                "fr":  "Francais",
+                                "en":  "Anglais"
+                            }
+               }
+}

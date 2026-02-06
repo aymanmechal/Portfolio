@@ -1,0 +1,33 @@
+﻿{
+  "parcours": {
+    "title": "PARCOURS",
+    "items": {
+      "0": {
+        "date": "2021 - 2024",
+        "title": "Lycée - Philippe Cousteau",
+        "lines": [
+          "NSI - Maths - Physique Chimie",
+          "Option Maths expertes",
+          "Bac General mention assez bien"
+        ]
+      },
+      "1": {
+        "date": "2024 - 2025",
+        "title": "IUT Montpellier - Sète",
+        "lines": [
+          "BUT Informatique (1ere annee)",
+          "Initiation a la programmation et gestion de projet"
+        ]
+      },
+      "2": {
+        "date": "2025 - 2028",
+        "title": "Sup de vinci - Bordeaux",
+        "lines": [
+          "Bachelor Informatique",
+          "Initiation a la programmation",
+          "Decouverte des reseaux et systemes d'exploitation"
+        ]
+      }
+    }
+  }
+}
