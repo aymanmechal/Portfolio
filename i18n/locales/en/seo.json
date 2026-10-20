@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "jobTitle": "Full stack developer student",
+    "home": {
+      "title": "Ayman Mechal · Full stack developer student on work-study in Bordeaux",
+      "description": "Software development Bachelor student in Bordeaux, looking for a full stack developer work-study placement: Java, Python, Vue and Nuxt."
+    },
+    "contact": {
+      "title": "Contact · Ayman Mechal",
+      "description": "Contact Ayman Mechal, full stack developer student looking for a work-study placement: email, phone, LinkedIn and GitHub."
+    },
+    "project": {
+      "pageTitle": "{title} · Project by Ayman Mechal",
+      "notFoundTitle": "Project not found · Ayman Mechal",
+      "notFoundDescription": "This project does not exist or is no longer available."
+    }
+  }
+}

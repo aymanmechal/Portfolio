@@ -1,5 +1,7 @@
-﻿{
+{
   "contact": {
+    "title": "ME CONTACTER",
+    "intro": "Le moyen le plus simple de me joindre : un email, un appel ou LinkedIn. Je réponds rapidement.",
     "form": {
       "fields": {
         "name": "Nom",

@@ -1,5 +1,18 @@
-﻿{
+{
   "presentation": {
-    "hello": "Bonjour, je suis"
+    "band": "Étudiant développeur · Bordeaux",
+    "subtitle": "Je cherche une alternance de développeur full stack",
+    "availability": "2 sem. école / 2 sem. entreprise · Disponible dès maintenant ou en M1 (août 2027)",
+    "buttons": {
+      "projects": "Voir mes projets",
+      "cv": "Télécharger mon CV"
+    },
+    "badge": "Disponible · Alternance full stack",
+    "facts": {
+      "0": "B3 Sup de Vinci",
+      "1": "Bordeaux",
+      "2": "Anglais B2",
+      "3": "Permis B"
+    }
   }
 }

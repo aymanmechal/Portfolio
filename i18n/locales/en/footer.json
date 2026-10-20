@@ -1,8 +1,15 @@
-﻿{
-    "footer":  {
-                   "newsletter":  {
-                                      "placeholder":  "Your email",
-                                      "button":  "Sign up"
-                                  }
-               }
+{
+  "footer": {
+    "label": "Contact",
+    "talk": "GET IN TOUCH",
+    "pitch": "I am looking for a full stack developer work-study placement (alternance), in Bordeaux or in Nouvelle-Aquitaine.",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "download_cv": "Download my CV",
+    "copyright": "© Ayman Mechal, Bordeaux"
+  }
 }

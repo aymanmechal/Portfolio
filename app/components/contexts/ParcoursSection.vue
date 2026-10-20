@@ -1,126 +1,119 @@
 <template>
     <section class="parcours" id="parcours">
-        <BaseTitle :text="t('parcours.title')" />
+        <div class="container parcours-inner">
+            <h2 class="h-section" v-reveal>
+                <span class="em-serif">{{ t('parcours.title') }}</span>
+            </h2>
 
-        <div class="timeline">
-            <span class="timeline-line" aria-hidden="true"></span>
-
-            <div class="timeline-items">
-                <div
-                    v-for="item in parcours"
+            <ol class="parcours-list">
+                <li
+                    v-for="(item, index) in parcours"
                     :key="item.title"
-                    class="timeline-item"
+                    class="parcours-item"
+                    :class="dotClasses[index % dotClasses.length]"
+                    v-reveal
                 >
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-dot">
-                        <div class="timeline-dot-ring"></div>
+                    <p class="parcours-date">
+                        <span class="parcours-dot" aria-hidden="true"></span>
+                        {{ item.date }}
+                    </p>
+                    <div class="parcours-body">
+                        <h3 class="parcours-name">{{ item.title }}</h3>
+                        <ul class="parcours-lines">
+                            <li v-for="line in item.lines" :key="line" class="parcours-line">
+                                {{ line }}
+                            </li>
+                        </ul>
                     </div>
-                    <BaseCard class="timeline-card">
-                        <BaseText :text="item.title" class="timeline-title" />
-                        <BaseText
-                            v-for="line in item.lines"
-                            :key="line"
-                            :text="line"
-                            class="timeline-line-text"
-                        />
-                    </BaseCard>
+                </li>
+            </ol>
+
+            <dl class="parcours-extras" v-reveal>
+                <div class="parcours-extra">
+                    <dt class="label">{{ t('parcours.extras.languages.label') }}</dt>
+                    <dd class="parcours-extra-text">{{ t('parcours.extras.languages.text') }}</dd>
                 </div>
-            </div>
+                <div class="parcours-extra">
+                    <dt class="label">{{ t('parcours.extras.interests.label') }}</dt>
+                    <dd class="parcours-extra-text">{{ t('parcours.extras.interests.text') }}</dd>
+                </div>
+            </dl>
         </div>
     </section>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+const { t, tm } = useI18n()
 
-const { t } = useI18n()
+const dotClasses = ['parcours-item--blue', 'parcours-item--yellow']
 
-const parcours = computed(() => [
-    {
-        date: t('parcours.items.0.date'),
-        title: t('parcours.items.0.title'),
-        lines: [
-            t('parcours.items.0.lines.0'),
-            t('parcours.items.0.lines.1'),
-            t('parcours.items.0.lines.2')
-        ]
-    },
-    {
-        date: t('parcours.items.1.date'),
-        title: t('parcours.items.1.title'),
-        lines: [
-            t('parcours.items.1.lines.0'),
-            t('parcours.items.1.lines.1')
-        ]
-    },
-    {
-        date: t('parcours.items.2.date'),
-        title: t('parcours.items.2.title'),
-        lines: [
-            t('parcours.items.2.lines.0'),
-            t('parcours.items.2.lines.1'),
-            t('parcours.items.2.lines.2')
-        ]
-    }
-])
+const parcours = computed(() =>
+    Object.keys(tm('parcours.items')).map((key) => ({
+        date: t(`parcours.items.${key}.date`),
+        title: t(`parcours.items.${key}.title`),
+        lines: tm(`parcours.items.${key}.lines`).map((_, i) => t(`parcours.items.${key}.lines.${i}`))
+    }))
+)
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .parcours {
-    @apply mx-auto flex w-full max-w-5xl flex-col items-center gap-6 px-6 pb-16;
+    @apply py-20 md:py-28;
 }
 
-.timeline {
-    @apply relative w-full max-w-3xl;
+.parcours-inner {
+    @apply flex flex-col gap-12;
 }
 
-.timeline-line {
-    @apply absolute top-0 h-full w-2 rounded-full;
-    left: calc(56px + 24px);
-    background: linear-gradient(180deg, #4e6cff 0%, rgba(255, 255, 255, 0.85) 100%);
+.parcours-list {
+    @apply flex flex-col;
 }
 
-.timeline-items {
-    @apply flex flex-col gap-10;
+.parcours-item {
+    @apply grid grid-cols-1 gap-3 border-t border-navy/10 py-10 md:grid-cols-[14rem_minmax(0,1fr)] md:gap-10;
 }
 
-.timeline-item {
-    @apply relative grid items-start gap-4;
-    grid-template-columns: 56px 48px 1fr;
+.parcours-date {
+    @apply flex items-center gap-3 pt-2 text-sm font-semibold text-muted;
 }
 
-.timeline-date {
-    @apply mt-2 text-[11px] font-semibold text-blue-100/80 text-center;
+.parcours-dot {
+    @apply inline-block h-3.5 w-3.5 shrink-0 rounded-full;
 }
 
-.timeline-dot {
-    @apply relative mt-1 flex h-10 w-10 items-center justify-center;
+.parcours-item--blue .parcours-dot {
+    @apply bg-blue;
 }
 
-.timeline-dot-ring {
-    @apply h-10 w-10 rounded-full border-[6px] border-blue-400 bg-white;
-    box-shadow: 0 8px 20px rgba(16, 45, 110, 0.45);
+.parcours-item--yellow .parcours-dot {
+    @apply bg-yellow;
 }
 
-.timeline-card {
-    @apply bg-[#1a2a5a] shadow-xl shadow-blue-900/40;
+.parcours-body {
+    @apply flex flex-col gap-4;
 }
 
-.timeline-title {
-    @apply text-sm font-semibold text-blue-100/90 mb-2;
+.parcours-name {
+    @apply font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight text-navy;
 }
 
-.timeline-line-text {
-    @apply text-xs text-blue-100/70;
+.parcours-lines {
+    @apply flex flex-col gap-1.5;
 }
 
-@media (min-width: 640px) {
-    .timeline-item {
-        grid-template-columns: 70px 56px 1fr;
-    }
+.parcours-line {
+    @apply max-w-[65ch] text-[1.0625rem] leading-relaxed text-navy md:text-lg;
+}
 
-    .timeline-line {
-        left: calc(70px + 28px);
-    }
+.parcours-extras {
+    @apply grid grid-cols-1 gap-6 border-t border-navy/10 pt-10 md:grid-cols-2;
+}
+
+.parcours-extra {
+    @apply flex flex-col gap-2;
+}
+
+.parcours-extra-text {
+    @apply max-w-[65ch] text-[1.0625rem] leading-relaxed text-navy md:text-lg;
 }
 </style>

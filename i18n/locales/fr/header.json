@@ -1,16 +1,17 @@
-﻿{
-    "header":  {
-                   "login":  {
-                                 "title":  "Connexion",
-                                 "email":  "Email",
-                                 "password":  "Mot de passe",
-                                 "button":  "Login",
-                                 "register":  "register"
-                             },
-                   "lang":  {
-                                "title":  "Langue",
-                                "fr":  "Francais",
-                                "en":  "Anglais"
-                            }
-               }
+{
+  "header": {
+    "aria": {
+      "nav": "Navigation principale",
+      "lang": "Choix de la langue"
+    },
+    "cv": "CV",
+    "menu": "Menu",
+    "close": "Fermer",
+    "nav": {
+      "projects": "Projets",
+      "skills": "Compétences",
+      "parcours": "Parcours",
+      "contact": "Contact"
+    }
+  }
 }

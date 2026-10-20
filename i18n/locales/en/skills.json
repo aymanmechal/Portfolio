@@ -1,21 +1,38 @@
-﻿{
+{
   "skills": {
-    "title": "SKILLS",
-    "tools_title": "Tools & Design",
-    "dev_title": "Development",
-    "tools": {
-      "vscode": "VS Code",
-      "git": "Git",
-      "canva": "Canva",
-      "figma": "Figma",
-      "photoshop": "Photoshop"
-    },
-    "dev": {
-      "python": "Python",
-      "java": "Java",
-      "html": "HTML",
-      "css": "CSS",
-      "javascript": "JavaScript"
+    "title": "Skills",
+    "example_label": "E.g. :",
+    "items": {
+      "0": {
+        "title": "Languages",
+        "text": "I code in Java, Python, C#, PHP and JavaScript / TypeScript, and write my queries in SQL.",
+        "examples": "Java, Python, C#, PHP, JavaScript, TypeScript, SQL"
+      },
+      "1": {
+        "title": "Back-end",
+        "text": "I design business logic and endpoints that exchange JSON, with FastAPI or PHP.",
+        "examples": "Python FastAPI, PHP, C# / .NET (Avalonia), OOP, JSON"
+      },
+      "2": {
+        "title": "Front-end",
+        "text": "I build interfaces in Vue 3 and Nuxt, with components and a Pinia store.",
+        "examples": "Vue.js 3, Nuxt, TypeScript, Tailwind CSS, Pinia, HTML, CSS"
+      },
+      "3": {
+        "title": "Databases & data",
+        "text": "I model data in SQL and process CSV and JSON files, up to a prediction model.",
+        "examples": "SQL, SQLite, JSON, CSV, scikit-learn"
+      },
+      "4": {
+        "title": "Tools & delivery",
+        "text": "I version my code with Git and run my services with Docker Compose.",
+        "examples": "Git, GitHub, GitLab, Docker, Docker Compose, CI/CD basics"
+      },
+      "5": {
+        "title": "Methods",
+        "text": "I work in a team using Agile / Scrum, and I test my code with pytest.",
+        "examples": "Agile / Scrum, tests, teamwork"
+      }
     }
   }
 }

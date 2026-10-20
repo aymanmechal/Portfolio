@@ -1,30 +1,46 @@
 <template>
-  <footer class="main-footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <AppLogo />
-      </div>
-      <NewsletterForm />
+  <footer id="contact" class="main-footer container">
+    <div class="main-footer__block">
+      <p class="main-footer__label">{{ t('footer.label') }}</p>
+
+      <h2 class="main-footer__talk">{{ t('footer.talk') }}</h2>
+
+      <p class="main-footer__pitch">{{ t('footer.pitch') }}</p>
+
+      <ContactLinks />
+
+      <p class="main-footer__copy">{{ t('footer.copyright') }}</p>
     </div>
   </footer>
 </template>
 
 <script setup>
-import NewsletterForm from '~/components/contexts/NewsletterForm.vue'
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
 .main-footer {
-  @apply mt-16 px-6 py-10 md:px-10;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(9, 14, 26, 0.7) 0%, rgba(9, 14, 26, 0.95) 100%);
+  @apply pb-6 pt-24 md:pt-32;
 }
 
-.footer-content {
-  @apply flex flex-col gap-8 md:flex-row md:items-center md:justify-between;
+.main-footer__block {
+  @apply flex flex-col rounded-card bg-blue p-7 text-white md:p-14;
 }
 
-.footer-brand {
-  @apply flex flex-col gap-2;
+.main-footer__label {
+  @apply font-sans text-sm font-semibold text-white;
+}
+
+.main-footer__talk {
+  @apply mt-3 font-display font-extrabold text-white leading-[0.95] tracking-[-0.03em];
+  font-size: clamp(3rem, 9vw, 8rem);
+}
+
+.main-footer__pitch {
+  @apply mt-6 max-w-[40ch] font-sans text-lg md:text-xl leading-relaxed text-white;
+}
+
+.main-footer__copy {
+  @apply mt-10 font-sans text-sm text-white;
 }
 </style>

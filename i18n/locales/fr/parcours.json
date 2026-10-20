@@ -1,32 +1,31 @@
-﻿{
+{
   "parcours": {
-    "title": "PARCOURS",
+    "title": "Parcours",
     "items": {
       "0": {
-        "date": "2021 - 2024",
-        "title": "Lycée - Philippe Cousteau",
+        "date": "2024 – 2027",
+        "title": "Sup de Vinci Bordeaux",
         "lines": [
-          "NSI - Maths - Physique Chimie",
-          "Option Maths expertes",
-          "Bac General mention assez bien"
+          "Bachelor Développement Informatique",
+          "B3 en cours"
         ]
       },
       "1": {
-        "date": "2024 - 2025",
-        "title": "IUT Montpellier - Sète",
+        "date": "2019 – 2022",
+        "title": "Lycée Philippe Cousteau",
         "lines": [
-          "BUT Informatique (1ere annee)",
-          "Initiation a la programmation et gestion de projet"
+          "Baccalauréat général : Maths, NSI, Physique-Chimie"
         ]
+      }
+    },
+    "extras": {
+      "languages": {
+        "label": "Langues",
+        "text": "Français, Anglais (B2), Espagnol (A2)"
       },
-      "2": {
-        "date": "2025 - 2028",
-        "title": "Sup de vinci - Bordeaux",
-        "lines": [
-          "Bachelor Informatique",
-          "Initiation a la programmation",
-          "Decouverte des reseaux et systemes d'exploitation"
-        ]
+      "interests": {
+        "label": "Centres d'intérêt",
+        "text": "Football et sports, voyage et découverte culturelle, musique"
       }
     }
   }

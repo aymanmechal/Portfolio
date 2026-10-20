@@ -1,21 +1,38 @@
-﻿{
+{
   "skills": {
-    "title": "COMPETENCES",
-    "tools_title": "Outils & Design",
-    "dev_title": "Developpement",
-    "tools": {
-      "vscode": "VS Code",
-      "git": "Git",
-      "canva": "Canva",
-      "figma": "Figma",
-      "photoshop": "Photoshop"
-    },
-    "dev": {
-      "python": "Python",
-      "java": "Java",
-      "html": "HTML",
-      "css": "CSS",
-      "javascript": "JavaScript"
+    "title": "Compétences",
+    "example_label": "Ex. :",
+    "items": {
+      "0": {
+        "title": "Langages",
+        "text": "Je code en Java, Python, C#, PHP et JavaScript / TypeScript, et j'écris mes requêtes en SQL.",
+        "examples": "Java, Python, C#, PHP, JavaScript, TypeScript, SQL"
+      },
+      "1": {
+        "title": "Back-end",
+        "text": "Je conçois une logique métier et des endpoints qui échangent du JSON, avec FastAPI ou PHP.",
+        "examples": "Python FastAPI, PHP, C# / .NET (Avalonia), POO, JSON"
+      },
+      "2": {
+        "title": "Front-end",
+        "text": "Je construis des interfaces en Vue 3 et Nuxt, avec des composants et un store Pinia.",
+        "examples": "Vue.js 3, Nuxt, TypeScript, Tailwind CSS, Pinia, HTML, CSS"
+      },
+      "3": {
+        "title": "Bases de données & data",
+        "text": "Je modélise des données en SQL et je traite des fichiers CSV et JSON, jusqu'à un modèle de prédiction.",
+        "examples": "SQL, SQLite, JSON, CSV, scikit-learn"
+      },
+      "4": {
+        "title": "Outils & livraison",
+        "text": "Je versionne mon code avec Git et je lance mes services avec Docker Compose.",
+        "examples": "Git, GitHub, GitLab, Docker, Docker Compose, notions de CI/CD"
+      },
+      "5": {
+        "title": "Méthodes",
+        "text": "Je travaille en équipe selon la méthode Agile / Scrum, et je teste mon code avec pytest.",
+        "examples": "Agile / Scrum, tests, travail en équipe"
+      }
     }
   }
 }

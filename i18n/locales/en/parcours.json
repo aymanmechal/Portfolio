@@ -1,32 +1,31 @@
-﻿{
+{
   "parcours": {
-    "title": "EDUCATION",
+    "title": "Education",
     "items": {
       "0": {
-        "date": "2021 - 2024",
-        "title": "High School - Philippe Cousteau",
+        "date": "2024 – 2027",
+        "title": "Sup de Vinci Bordeaux",
         "lines": [
-          "NSI - Math - Physics Chemistry",
-          "Advanced Math option",
-          "General baccalaureate, honors"
+          "Bachelor in Software Development",
+          "3rd year in progress"
         ]
       },
       "1": {
-        "date": "2024 - 2025",
-        "title": "IUT Montpellier - Sète",
+        "date": "2019 – 2022",
+        "title": "Lycée Philippe Cousteau",
         "lines": [
-          "BUT Computer Science (1st year)",
-          "Intro to programming and project management"
+          "General baccalaureate: Maths, NSI, Physics-Chemistry"
         ]
+      }
+    },
+    "extras": {
+      "languages": {
+        "label": "Languages",
+        "text": "French, English (B2), Spanish (A2)"
       },
-      "2": {
-        "date": "2025 - 2028",
-        "title": "Sup de vinci - Bordeaux",
-        "lines": [
-          "Bachelor in Computer Science",
-          "Intro to programming",
-          "Networks and operating systems basics"
-        ]
+      "interests": {
+        "label": "Interests",
+        "text": "Football and sports, travel and cultural discovery, music"
       }
     }
   }

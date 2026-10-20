@@ -1,15 +1,13 @@
 <template>
-  <h2 class="title">{{ text }}</h2>
+  <component :is="as" class="h-section">
+    <slot>{{ text }}</slot>
+  </component>
 </template>
 
 <script setup>
+// Usage : <BaseTitle>Mes <span class="em-serif">projets</span></BaseTitle>
 defineProps({
-  text: { type: String, required: true, default: '' }
+  text: { type: String, default: '' },
+  as: { type: String, default: 'h2' }
 })
 </script>
-
-<style lang="scss" scoped>
-.title {
-  @apply text-center text-2xl font-black text-white;
-}
-</style>

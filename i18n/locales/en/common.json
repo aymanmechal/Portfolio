@@ -1,7 +1,13 @@
-﻿{
-    "common":  {
-                   "aria":  {
-                                "home":  "Back to home"
-                            }
-               }
+{
+  "common": {
+    "aria": {
+      "home": "Back to home"
+    },
+    "skip": "Skip to content",
+    "error": "Error",
+    "oops": "Oops",
+    "error_text": "An error occurred.",
+    "back_home": "Back to home",
+    "marquee": "Full stack developer work-study placement • Bordeaux • Available • Java • Python • C# • Vue • Docker"
+  }
 }

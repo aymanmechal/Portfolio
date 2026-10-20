@@ -1,101 +1,131 @@
 <template>
-  <header class="main-header">
-    <div class="logo">
+  <header class="main-header" @keydown.esc="closeMenu">
+    <div class="container main-header__inner">
       <AppLogo />
-    </div>
-    <nav>
-      <MainHeaderNavBar :links="links" @item-click="onNavItemClick" />
-    </nav>
-    <div v-if="isLoginOpen" class="login-panel">
-      <form class="login-form" @submit.prevent="onSubmit">
-        <p class="login-title">Connexion</p>
-        <input
-          v-model="email"
-          class="login-input"
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-        />
-        <input
-          v-model="password"
-          class="login-input"
-          type="password"
-          name="password"
-          placeholder="Mot de passe"
-          required
-        />
-        <button class="login-button" type="submit">Login</button>
-        <NuxtLink class="login-register" to="/register">register</NuxtLink>
-      </form>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        :aria-expanded="isOpen ? 'true' : 'false'"
+        aria-controls="main-nav"
+        @click="isOpen = !isOpen"
+      >
+        {{ isOpen ? t('header.close') : t('header.menu') }}
+      </button>
+
+      <nav id="main-nav" class="main-nav" :class="{ 'is-open': isOpen }" :aria-label="t('header.aria.nav')">
+        <ul class="main-nav__list">
+          <li v-for="item in navItems" :key="item.hash">
+            <NuxtLink
+              :to="{ path: localePath('/'), hash: item.hash }"
+              class="pill main-nav__link"
+              @click="closeMenu"
+            >
+              {{ t(item.key) }}
+            </NuxtLink>
+          </li>
+        </ul>
+
+        <div class="main-nav__tools">
+          <a :href="asset(contact.cv)" download class="btn btn-primary main-nav__cv">
+            {{ t('header.cv') }}
+          </a>
+
+          <ul class="main-nav__langs" :aria-label="t('header.aria.lang')">
+            <li v-for="item in localeItems" :key="item.code">
+              <NuxtLink
+                :to="switchLocalePath(item.code)"
+                :class="['pill main-nav__lang', { 'is-active': item.code === locale }]"
+                :aria-current="item.code === locale ? 'true' : undefined"
+                :hreflang="item.code"
+              >
+                {{ item.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { contact } from '~/data/contact'
 
-const links = [
-  { name: 'dark', src: 'images/dark.png' },
-  { name: 'lang', src: 'images/lang.png' },
-  { name: 'burger', src: 'images/burger.png' } 
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
+const switchLocalePath = useSwitchLocalePath()
+const asset = usePublicAsset()
+
+const isOpen = ref(false)
+const closeMenu = () => {
+  isOpen.value = false
+}
+
+const navItems = [
+  { key: 'header.nav.projects', hash: '#projects' },
+  { key: 'header.nav.skills', hash: '#skills' },
+  { key: 'header.nav.parcours', hash: '#parcours' },
+  { key: 'header.nav.contact', hash: '#contact' }
 ]
 
-const isLoginOpen = ref(false)
-const email = ref('')
-const password = ref('')
-
-const onNavItemClick = (link) => {
-  if (link?.name === 'burger') {
-    isLoginOpen.value = !isLoginOpen.value
-  }
-}
-
-const onSubmit = () => {
-  console.log('login:', { email: email.value, password: password.value })
-  email.value = ''
-  password.value = ''
-  isLoginOpen.value = false
-}
+const localeItems = [
+  { code: 'fr', label: 'FR' },
+  { code: 'en', label: 'EN' }
+]
 </script>
 
 <style lang="scss" scoped>
 .main-header {
-  @apply relative flex items-center justify-between px-6 py-5 md:px-10;
+  @apply sticky top-0 z-30 border-b border-navy/10 bg-surface/80 backdrop-blur-md;
 }
 
-.logo {
-  @apply flex items-center;
+.main-header__inner {
+  @apply relative flex items-center justify-between gap-4 py-3.5;
 }
 
-.login-panel {
-  @apply absolute right-6 top-[72px] z-20 w-[280px] rounded-[14px] p-4;
-  background: rgba(12, 18, 34, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+.menu-toggle {
+  @apply rounded-full border-2 border-navy px-4 py-2 font-sans text-sm font-semibold text-navy cursor-pointer transition-colors duration-200 hover:bg-navy hover:text-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2;
 }
 
-.login-form {
-  @apply flex flex-col gap-3;
+.main-nav {
+  @apply hidden;
 }
 
-.login-title {
-  @apply text-sm text-slate-200 font-semibold;
+.main-nav.is-open {
+  @apply absolute left-0 right-0 top-full flex flex-col gap-4 border-b border-navy/10 bg-surface p-5 shadow-lg;
 }
 
-.login-input {
-  @apply w-full border-0 rounded-[10px] py-2.5 px-3 bg-[#d7e4ff] text-[#1a2433] text-[13px] outline-none;
+.main-nav__list,
+.main-nav__langs {
+  @apply m-0 flex list-none flex-wrap items-center gap-2 p-0;
 }
 
-.login-button {
-  @apply border-0 rounded-[10px] py-2.5 bg-[#2f4edc] text-white font-semibold cursor-pointer;
+.main-nav__tools {
+  @apply flex flex-wrap items-center gap-3;
 }
 
-.login-button:hover {
-  @apply bg-[#2944c2];
+.main-nav__cv {
+  @apply px-5 py-2.5 text-sm;
 }
 
-.login-register {
-  @apply text-xs text-slate-400 underline self-center;
+.main-nav__lang {
+  @apply px-3 py-1.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-blush;
+}
+
+.main-nav__lang.is-active {
+  @apply bg-navy text-white;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    @apply hidden;
+  }
+
+  .main-nav,
+  .main-nav.is-open {
+    @apply static flex flex-row items-center gap-6 border-0 bg-transparent p-0 shadow-none;
+  }
 }
 </style>

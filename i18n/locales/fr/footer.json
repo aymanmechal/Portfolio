@@ -1,8 +1,15 @@
-﻿{
-    "footer":  {
-                   "newsletter":  {
-                                      "placeholder":  "Ton email",
-                                      "button":  "S\u0027inscrire"
-                                  }
-               }
+{
+  "footer": {
+    "label": "Contact",
+    "talk": "ME CONTACTER",
+    "pitch": "Je cherche une alternance de développeur full stack, à Bordeaux ou en Nouvelle-Aquitaine.",
+    "labels": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "download_cv": "Télécharger mon CV",
+    "copyright": "© Ayman Mechal, Bordeaux"
+  }
 }

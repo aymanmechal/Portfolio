@@ -1,5 +1,7 @@
-﻿{
+{
   "contact": {
+    "title": "GET IN TOUCH",
+    "intro": "The simplest way to reach me: email, phone or LinkedIn. I reply quickly.",
     "form": {
       "fields": {
         "name": "Name",

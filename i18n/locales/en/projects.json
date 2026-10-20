@@ -1,0 +1,105 @@
+{
+  "projects": {
+    "label": "Projects",
+    "title": "My projects",
+    "titleLead": "My",
+    "titleAccent": "projects",
+    "subtitle": "School and personal projects: web, data and applications.",
+    "about": "About the project",
+    "view": "View",
+    "viewCode": "View the code on GitHub",
+    "viewDemo": "View the demo",
+    "stack": "Technologies",
+    "features": "What the project includes",
+    "learned": "What I learned",
+    "context": "Context",
+    "back": "All my projects",
+    "next": "Next project",
+    "notFound": "Project not found.",
+    "contexts": {
+      "school": "School project",
+      "personal": "Personal project",
+      "team": "Team of 3"
+    },
+    "tags": {
+      "ia": "AI",
+      "web": "Web",
+      "data": "Data",
+      "design": "Design",
+      "jeu": "Game",
+      "desktop": "Desktop",
+      "poo": "OOP",
+      "tests": "Tests"
+    },
+    "items": {
+      "cerealis": {
+        "excerpt": "An app that predicts the best time to sell cereal crops, with Python and Vue 3.",
+        "description": "I built Cerealis to predict the best time to sell cereal crops. The FastAPI back end exposes endpoints to read and add data, stored in a SQLite database with CSV export. The scikit-learn model is trained on monthly series from 1996 to 2025. The Vue 3 and TypeScript front end shows a dashboard, a map and a price chart. The whole project starts with Docker Compose.",
+        "features": [
+          "FastAPI endpoints to read and add data",
+          "SQLite database with CSV export",
+          "Monthly series from 1996 to 2025",
+          "scikit-learn prediction model",
+          "Dashboard, map and price chart",
+          "Launch with Docker Compose"
+        ],
+        "learned": [
+          "Designing a FastAPI API: I separate read and write routes, and I check the data I receive.",
+          "Keeping the same data format across the SQLite database, the CSV export and the Vue front end.",
+          "Preparing time-series data before training a scikit-learn model."
+        ]
+      },
+      "bibliotheque": {
+        "excerpt": "A Python library management app, built in a team of three.",
+        "description": "Bibliothèque is a Python app I built in a team of three. It manages users, books and their copies, loans with a return deadline, subscriptions, reservations with a waiting queue and penalties. Histories exist on the user side and on the book side. Data is saved as JSON, with CSV import and export. The interface is built with Tkinter and the code is covered by pytest tests.",
+        "features": [
+          "Users, books and copies",
+          "Loans with a return deadline",
+          "Subscriptions, reservations and waiting queue",
+          "Penalties and histories",
+          "JSON saving, CSV import and export",
+          "Tkinter interface and pytest tests"
+        ],
+        "learned": [
+          "Modelling a domain with OOP: loan, reservation and penalty rules must stay consistent across classes.",
+          "Working on a shared Git repository with three people, with regular commits.",
+          "Writing pytest tests: I learned to read a test to understand what it checks, instead of copying it."
+        ]
+      },
+      "donjonpad": {
+        "excerpt": "A desktop adventurer guild management game, in C# and Avalonia.",
+        "description": "DonjonPAD is an adventurer guild management game I developed in C# with Avalonia. The nine hero classes are created through a HeroFactory. I handle missions, random events, the merchant and recruitment, as well as the application states and screens.",
+        "features": [
+          "Nine hero classes created through a HeroFactory",
+          "Missions and their results",
+          "Random events",
+          "Merchant and hero recruitment",
+          "Application states and screens",
+          "Avalonia graphical interface"
+        ],
+        "learned": [
+          "Structuring a game into classes (heroes, missions, events) instead of one block of code.",
+          "Using a factory to create nine hero types without duplicating creation code.",
+          "Building screens and managing their states in Avalonia, with C# and .NET."
+        ]
+      },
+      "portfolio": {
+        "excerpt": "My online CV, built with Nuxt 4 and Tailwind CSS, in French and English.",
+        "description": "This site is my online CV. I built it with Nuxt 4 and Tailwind CSS, with content in French and English, shared state with Pinia and forms validated with vee-validate. Project pages are generated from a store and the layout adapts to mobile screens.",
+        "features": [
+          "Bilingual FR / EN site with prefixed routes",
+          "Reusable Vue components",
+          "Shared state with Pinia",
+          "Contact form validated with vee-validate",
+          "Responsive layout with Tailwind CSS",
+          "Project pages generated from a store"
+        ],
+        "learned": [
+          "Internationalising a site: each text lives in a file per language.",
+          "Sharing state between several components with Pinia.",
+          "Adapting a layout to every screen size with Tailwind CSS."
+        ]
+      }
+    }
+  }
+}

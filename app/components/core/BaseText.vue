@@ -1,15 +1,17 @@
 <template>
-  <p class="text">{{ text }}</p>
+  <p class="base-text">
+    <slot>{{ text }}</slot>
+  </p>
 </template>
 
 <script setup>
 defineProps({
-  text: { type: String, required: true, default: '' }
+  text: { type: String, default: '' }
 })
 </script>
 
 <style lang="scss" scoped>
-.text {
-  @apply font-sans font-medium text-sm;
+.base-text {
+  @apply max-w-[65ch] font-sans text-[1.0625rem] md:text-lg leading-relaxed text-navy;
 }
 </style>

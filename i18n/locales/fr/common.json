@@ -1,7 +1,13 @@
-﻿{
-    "common":  {
-                   "aria":  {
-                                "home":  "Retour a l\u0027accueil"
-                            }
-               }
+{
+  "common": {
+    "aria": {
+      "home": "Retour à l'accueil"
+    },
+    "skip": "Aller au contenu",
+    "error": "Erreur",
+    "oops": "Oups",
+    "error_text": "Une erreur est survenue.",
+    "back_home": "Retour à l'accueil",
+    "marquee": "Alternance développeur full stack • Bordeaux • Disponible • Java • Python • C# • Vue • Docker"
+  }
 }

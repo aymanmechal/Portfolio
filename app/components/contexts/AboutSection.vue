@@ -1,61 +1,33 @@
 <template>
     <section class="about" id="about">
-        <BaseTitle :text="t('about.title')" />
+        <div class="container about-inner">
+            <h2 class="h-section" v-reveal>
+                <template v-if="titleParts.head">{{ titleParts.head }} </template>
+                <span class="em-serif">{{ titleParts.em }}</span>
+            </h2>
 
-        <div class="about-content">
-            <BaseCard class="about-card">
-                <div class="about-texts">
-                    <BaseText :text="t('about.intro')" />
-                    <BaseText :text="t('about.vision')" />
-                    <BaseText :text="t('about.goal')" />
+            <div class="about-grid">
+                <p class="about-profile" v-reveal>{{ t('about.profile') }}</p>
+
+                <div class="about-cards">
+                    <article
+                        v-for="card in cards"
+                        :key="card.word"
+                        class="about-card"
+                        :class="card.variant"
+                        v-reveal
+                    >
+                        <h3 class="about-card-word">{{ card.word }}</h3>
+                        <p class="about-card-text">{{ card.text }}</p>
+                    </article>
                 </div>
+            </div>
 
-                <div class="about-actions">
-                    <BaseButton :text="t('about.buttons.contact')" @customClick="onContactClick" />
-                    <BaseButton :text="t('about.buttons.download_cv')" @customClick="onDownloadCv" />
-                </div>
-            </BaseCard>
-
-            <div class="about-avatar">
-                <BaseCard rounded class="avatar-circle" aria-hidden="true">
-                    <NuxtImg src="/images/dos.png" class="avatar-img" />
-                </BaseCard>
-
-                <div class="about-socials">
-                    <BaseCard rounded class="reseaux">
-                        <a
-                            class="social-link"
-                            href="https://linkedin.com/in/ayman-mechal"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="LinkedIn"
-                        >
-                            <Icon name="simple-icons:linkedin" class="social-icon" />
-                        </a>
-                    </BaseCard>
-                    <BaseCard rounded class="reseaux">
-                        <a
-                            class="social-link"
-                            href="https://wa.me/3367423645"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="WhatsApp"
-                        >
-                            <Icon name="simple-icons:whatsapp" class="social-icon" />
-                        </a>
-                    </BaseCard>
-                    <BaseCard rounded class="reseaux">
-                        <a
-                            class="social-link"
-                            href="https://github.com/aymanmechal"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="GitHub"
-                        >
-                            <Icon name="simple-icons:github" class="social-icon" />
-                        </a>
-                    </BaseCard>
-                </div>
+            <div class="about-bottom" v-reveal>
+                <p class="about-facts">{{ t('about.facts') }}</p>
+                <button type="button" class="btn btn-primary" @click="onContactClick">
+                    {{ t('about.buttons.contact') }}
+                </button>
             </div>
         </div>
     </section>
@@ -63,62 +35,72 @@
 
 <script setup>
 const { t } = useI18n()
+const localePath = useLocalePath()
+
+// Coupe le titre : le dernier mot part en serif italique
+const titleParts = computed(() => {
+    const words = t('about.title').trim().split(' ')
+    const em = words.pop() || ''
+    return { head: words.join(' '), em }
+})
+
+const cards = computed(() => [
+    { word: t('about.cards.0.word'), text: t('about.cards.0.text'), variant: 'about-card--yellow' },
+    { word: t('about.cards.1.word'), text: t('about.cards.1.text'), variant: 'about-card--green' }
+])
 
 const onContactClick = () => {
-    navigateTo('/contact')
-}
-
-const onDownloadCv = () => {
-    // dl le cv
+    navigateTo(localePath('/contact'))
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .about {
-    @apply mx-auto flex w-full max-w-5xl flex-col items-center gap-8 px-6 pb-16;
+    @apply py-20 md:py-28;
 }
 
-.about-content {
-    @apply flex w-full flex-col items-center gap-10 md:flex-row md:items-start md:justify-between;
+.about-inner {
+    @apply flex flex-col gap-12;
+}
+
+.about-grid {
+    @apply grid grid-cols-1 gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:items-start md:gap-14;
+}
+
+.about-profile {
+    @apply max-w-[65ch] text-[1.0625rem] leading-relaxed text-navy md:text-lg;
+}
+
+.about-cards {
+    @apply grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-1;
 }
 
 .about-card {
-    @apply w-full max-w-xl bg-[#101828] ring-1 ring-blue-700/40 shadow-lg shadow-blue-900/40;
+    @apply flex flex-col gap-4 rounded-[24px] p-6 md:p-8;
 }
 
-.about-texts {
-    @apply flex flex-col gap-3 text-left;
+.about-card--yellow {
+    @apply bg-yellow text-navy;
 }
 
-.about-actions {
-    @apply mt-6 flex flex-wrap gap-3;
+.about-card--green {
+    @apply bg-green text-navy;
 }
 
-.about-avatar {
-    @apply flex flex-col items-center gap-4;
+.about-card-word {
+    @apply font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-none tracking-[-0.04em];
 }
 
-.avatar-circle {
-    @apply flex h-56 w-56 items-center justify-center overflow-hidden bg-blue-700;
+.about-card-text {
+    @apply max-w-[30ch] text-[1.0625rem] leading-relaxed md:text-lg;
 }
 
-.avatar-img {
-    @apply h-full w-full object-cover object-center scale-110;
+.about-bottom {
+    @apply flex flex-col gap-6 border-t border-navy/10 pt-8 md:flex-row md:items-center md:justify-between;
 }
 
-.about-socials {
-    @apply flex items-center gap-3;
+.about-facts {
+    @apply max-w-[55ch] text-[1.0625rem] font-medium text-muted md:text-lg;
 }
 
-.reseaux {
-    @apply flex h-10 w-10 items-center justify-center border border-blue-600 bg-transparent text-blue-100 transition hover:bg-blue-600 hover:text-white;
-}
-
-.social-link {
-    @apply flex h-full w-full items-center justify-center;
-}
-
-.social-icon {
-    @apply h-5 w-5;
-}
 </style>

@@ -1,12 +1,20 @@
-﻿{
-    "about":  {
-                  "title":  "A PROPOS",
-                  "intro":  "Etudiant chez Sup de Vinci a Bordeaux, je suis passionne par l\u0027informatique et ses possibilites.",
-                  "vision":  "J\u0027aime concevoir des solutions utiles, du front au back, et donner vie a des idees concretes.",
-                  "goal":  "Mon objectif : explorer, experimenter et contribuer a des projets qui ont du sens.",
-                  "buttons":  {
-                                  "contact":  "Me Contacter",
-                                  "download_cv":  "Telecharger CV"
-                              }
-              }
+{
+  "about": {
+    "title": "À propos",
+    "profile": "Étudiant en Bachelor Développement Informatique (B3) à Sup de Vinci Bordeaux, je me forme au développement full stack. J'ai des bases en programmation orientée objet (Java, C#, Python), en back-end (Python FastAPI, PHP, endpoints JSON), en front-end (Vue 3, TypeScript, Nuxt) et en bases de données SQL. Je suis à l'aise avec Git, Docker et Agile. Je veux concevoir des fonctionnalités de bout en bout, de la base de données jusqu'aux écrans.",
+    "facts": "Permis B, véhiculé · Mobilité en Nouvelle-Aquitaine",
+    "cards": {
+      "0": {
+        "word": "B3",
+        "text": "Bachelor Développement Informatique, Sup de Vinci Bordeaux (2024 – 2027)."
+      },
+      "1": {
+        "word": "ALTERNANCE",
+        "text": "Rythme 2 semaines école / 2 semaines entreprise. Disponible dès maintenant ou en M1 à partir d'août 2027."
+      }
+    },
+    "buttons": {
+      "contact": "Me contacter"
+    }
+  }
 }

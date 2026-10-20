@@ -1,0 +1,105 @@
+{
+  "projects": {
+    "label": "Projets",
+    "title": "Mes projets",
+    "titleLead": "Mes",
+    "titleAccent": "projets",
+    "subtitle": "Projets d'école et personnels : web, data et applications.",
+    "about": "À propos du projet",
+    "view": "Voir",
+    "viewCode": "Voir le code sur GitHub",
+    "viewDemo": "Voir la démo",
+    "stack": "Technologies",
+    "features": "Ce que le projet contient",
+    "learned": "Ce que j'ai appris",
+    "context": "Contexte",
+    "back": "Tous mes projets",
+    "next": "Projet suivant",
+    "notFound": "Projet introuvable.",
+    "contexts": {
+      "school": "Projet d'école",
+      "personal": "Projet personnel",
+      "team": "En équipe de 3"
+    },
+    "tags": {
+      "ia": "IA",
+      "web": "Web",
+      "data": "Data",
+      "design": "Design",
+      "jeu": "Jeu",
+      "desktop": "Desktop",
+      "poo": "POO",
+      "tests": "Tests"
+    },
+    "items": {
+      "cerealis": {
+        "excerpt": "Une application qui prédit le meilleur moment pour vendre des céréales, avec Python et Vue 3.",
+        "description": "J'ai construit Cerealis pour prédire le meilleur moment de vente de céréales. Le back en FastAPI expose des endpoints de lecture et d'ajout de données, stockées dans une base SQLite avec export CSV. Le modèle scikit-learn s'appuie sur des séries mensuelles de 1996 à 2025. Le front en Vue 3 et TypeScript affiche un tableau de bord, une carte et un graphique des prix. Le tout se lance avec Docker Compose.",
+        "features": [
+          "Endpoints FastAPI de lecture et d'ajout de données",
+          "Base SQLite avec export CSV",
+          "Séries mensuelles de 1996 à 2025",
+          "Modèle de prédiction scikit-learn",
+          "Tableau de bord, carte et graphique des prix",
+          "Lancement avec Docker Compose"
+        ],
+        "learned": [
+          "Concevoir une API FastAPI : je sépare les routes de lecture et d'ajout, et je vérifie les données reçues.",
+          "Garder le même format de données entre la base SQLite, l'export CSV et le front Vue.",
+          "Préparer des données de séries temporelles avant d'entraîner un modèle scikit-learn."
+        ]
+      },
+      "bibliotheque": {
+        "excerpt": "Une application Python de gestion de bibliothèque, réalisée en équipe de trois.",
+        "description": "Bibliothèque est une application Python que j'ai réalisée en équipe de trois. Elle gère les utilisateurs, les livres et leurs exemplaires, les emprunts avec date limite de retour, les abonnements, les réservations avec file d'attente et les pénalités. Les historiques existent côté utilisateur et côté livre. Les données sont sauvegardées en JSON, avec import et export CSV. L'interface est faite avec Tkinter et le code est couvert par des tests pytest.",
+        "features": [
+          "Utilisateurs, livres et exemplaires",
+          "Emprunts avec date limite de retour",
+          "Abonnements, réservations et file d'attente",
+          "Pénalités et historiques",
+          "Sauvegarde JSON, import et export CSV",
+          "Interface Tkinter et tests pytest"
+        ],
+        "learned": [
+          "Modéliser un domaine en POO : les règles d'emprunt, de réservation et de pénalité doivent rester cohérentes entre les classes.",
+          "Travailler à trois sur un même dépôt Git, avec des commits réguliers.",
+          "Écrire des tests pytest : j'ai appris à lire un test pour savoir ce qu'il vérifie, au lieu de le copier."
+        ]
+      },
+      "donjonpad": {
+        "excerpt": "Un jeu desktop de gestion de guilde d'aventuriers, en C# et Avalonia.",
+        "description": "DonjonPAD est un jeu de gestion de guilde d'aventuriers, que j'ai développé en C# avec Avalonia. Les neuf classes de héros sont créées via une HeroFactory. Je gère les missions, les événements aléatoires, le marchand et le recrutement, ainsi que les états de l'application et les écrans.",
+        "features": [
+          "Neuf classes de héros créées via une HeroFactory",
+          "Missions et leurs résultats",
+          "Événements aléatoires",
+          "Marchand et recrutement de héros",
+          "Gestion des états de l'application et des écrans",
+          "Interface graphique Avalonia"
+        ],
+        "learned": [
+          "Structurer un jeu en classes (héros, missions, événements) plutôt qu'en un seul bloc de code.",
+          "Utiliser une factory pour créer neuf types de héros sans dupliquer le code de création.",
+          "Construire des écrans et gérer leurs états dans Avalonia, en C# et .NET."
+        ]
+      },
+      "portfolio": {
+        "excerpt": "Mon CV en ligne, construit avec Nuxt 4 et Tailwind CSS, en français et en anglais.",
+        "description": "Ce site est mon CV en ligne. Je l'ai construit avec Nuxt 4 et Tailwind CSS, avec un contenu en français et en anglais, un état partagé avec Pinia et des formulaires validés avec vee-validate. Les pages projets sont générées à partir d'un store et la mise en page s'adapte aux mobiles.",
+        "features": [
+          "Site bilingue FR / EN avec routes préfixées",
+          "Composants Vue réutilisables",
+          "État partagé avec Pinia",
+          "Formulaire de contact validé avec vee-validate",
+          "Mise en page responsive avec Tailwind CSS",
+          "Pages projets générées depuis un store"
+        ],
+        "learned": [
+          "Internationaliser un site : chaque texte vit dans un fichier par langue.",
+          "Partager un état entre plusieurs composants avec Pinia.",
+          "Adapter une mise en page à tous les écrans avec Tailwind CSS."
+        ]
+      }
+    }
+  }
+}

@@ -1,5 +1,18 @@
-﻿{
+{
   "presentation": {
-    "hello": "Hello, I am"
+    "band": "Developer student · Bordeaux",
+    "subtitle": "I am looking for a full stack developer work-study placement",
+    "availability": "2 weeks school / 2 weeks company · Available now or for M1 (from August 2027)",
+    "buttons": {
+      "projects": "See my projects",
+      "cv": "Download my CV"
+    },
+    "badge": "Available · Full stack work-study",
+    "facts": {
+      "0": "B3 Sup de Vinci",
+      "1": "Bordeaux",
+      "2": "English B2",
+      "3": "Driving licence B"
+    }
   }
 }

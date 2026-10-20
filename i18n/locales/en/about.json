@@ -1,12 +1,20 @@
-﻿{
-    "about":  {
-                  "title":  "ABOUT",
-                  "intro":  "Student at Sup de Vinci in Bordeaux, I am passionate about computing and its possibilities.",
-                  "vision":  "I like building useful solutions, from front to back, and bringing ideas to life.",
-                  "goal":  "My goal: explore, experiment, and contribute to projects that matter.",
-                  "buttons":  {
-                                  "contact":  "Contact Me",
-                                  "download_cv":  "Download CV"
-                              }
-              }
+{
+  "about": {
+    "title": "About",
+    "profile": "Bachelor student in Software Development (3rd year) at Sup de Vinci in Bordeaux, I am training to become a full stack developer. I have solid basics in object-oriented programming (Java, C#, Python), back-end (Python FastAPI, PHP, JSON endpoints), front-end (Vue 3, TypeScript, Nuxt) and SQL databases. I am comfortable with Git, Docker and Agile. I want to design features end to end, from the database to the screens.",
+    "facts": "Full driving licence (B), own car · Mobile across Nouvelle-Aquitaine",
+    "cards": {
+      "0": {
+        "word": "B3",
+        "text": "Bachelor in Software Development, Sup de Vinci Bordeaux (2024 – 2027)."
+      },
+      "1": {
+        "word": "WORK-STUDY",
+        "text": "Rhythm of 2 weeks school / 2 weeks company. Available now, or for M1 from August 2027."
+      }
+    },
+    "buttons": {
+      "contact": "Contact me"
+    }
+  }
 }

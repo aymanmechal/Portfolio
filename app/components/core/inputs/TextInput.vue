@@ -12,38 +12,14 @@
 
 <script setup>
 defineProps({
-  modelValue: {
-    type: [String, Number],
-    default: '',
-  },
-  name: {
-    type: String,
-    default: '',
-  },
-  type: {
-    type: String,
-    default: 'text',
-  },
-  placeholder: {
-    type: String,
-    default: '',
-  },
-  errorMessage: {
-    type: String,
-    default: '',
-  },
-  showError: {
-    type: Boolean,
-    default: false,
-  },
-  inputClass: {
-    type: String,
-    default: '',
-  },
-  errorClass: {
-    type: String,
-    default: '',
-  },
+  modelValue: { type: [String, Number], default: '' },
+  name: { type: String, default: '' },
+  type: { type: String, default: 'text' },
+  placeholder: { type: String, default: '' },
+  errorMessage: { type: String, default: '' },
+  showError: { type: Boolean, default: false },
+  inputClass: { type: String, default: '' },
+  errorClass: { type: String, default: '' }
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -51,15 +27,16 @@ const emit = defineEmits(['update:modelValue'])
 const onInput = (event) => {
   emit('update:modelValue', event.target.value)
 }
-
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .input {
-  @apply w-full border-0 rounded-[12px] py-3 px-[14px] bg-[#d7e4ff] text-[#1a2433] text-[14px] outline-none;
+  @apply w-full rounded-block border-2 border-navy/15 bg-surface px-4 py-3 font-sans text-base text-navy outline-none
+         placeholder:text-muted transition-colors duration-200
+         focus:border-blue focus-visible:ring-2 focus-visible:ring-blue/40;
 }
 
 .input-error {
-  @apply min-h-[16px] -mt-[6px] mx-1 mb-1 text-[12px] text-[#ff8a8a];
+  @apply mt-1.5 text-sm font-semibold text-blue;
 }
 </style>

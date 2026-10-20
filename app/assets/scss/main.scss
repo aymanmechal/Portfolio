@@ -3,19 +3,162 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
-    @apply m-0 p-0 box-border;
-    background-color: #0E1422;
-    color: #D5E2FF;
+  html {
+    @apply scroll-smooth;
   }
 
-  *, *::before, *::after {
+  html,
+  body {
+    @apply m-0 p-0 bg-bg text-navy font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  body {
+    @apply leading-relaxed;
+  }
+
+  *,
+  *::before,
+  *::after {
     @apply box-border;
   }
+
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    @apply bg-blue text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue ring-offset-2 ring-offset-bg rounded-sm;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold text-navy;
+  }
 }
 
-#__nuxt {
-  min-height: 100vh;
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-[1280px] px-6 sm:px-10 lg:px-16;
+  }
+
+  // Titre géant du hero
+  .h-hero {
+    @apply font-display font-extrabold leading-[0.92] tracking-[-0.035em] text-navy;
+    font-size: clamp(3.5rem, 11vw, 11rem);
+  }
+
+  // Titre de section
+  .h-section {
+    @apply font-display font-bold leading-[1.02] tracking-[-0.025em] text-navy;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+  }
+
+  // Mot souligné en serif italique (dans un h1/h2)
+  .em-serif {
+    @apply font-serif italic font-normal tracking-normal text-blue;
+  }
+
+  // Pilule (badges, tags, contexte)
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-current px-3.5 py-1.5 text-sm font-medium leading-none;
+  }
+
+  // Boutons
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans text-base font-semibold leading-none no-underline border-2 border-transparent transition-[transform,background-color,color,border-color] duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-blue text-white hover:bg-navy;
+  }
+
+  .btn-secondary {
+    @apply border-navy text-navy bg-transparent hover:bg-navy hover:text-bg;
+  }
+
+  // Carte arrondie
+  .card {
+    @apply rounded-card p-6 md:p-8 transition-[transform,box-shadow] duration-200 ease-out;
+  }
+
+  // Libellés et métadonnées (sans majuscules forcées)
+  .label {
+    @apply font-sans text-sm font-semibold text-muted;
+  }
+
+  // Bandeau défilant : .marquee (wrapper) > .marquee-track (contenu dupliqué)
+  .marquee {
+    @apply flex overflow-hidden whitespace-nowrap;
+  }
+
+  .marquee-track {
+    @apply inline-flex shrink-0 items-center gap-8 pr-8;
+    animation: marquee 28s linear infinite;
+  }
+
+  // Révélation au scroll (directive v-reveal)
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
+// Transition de page (app.pageTransition, fade 250 ms)
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 250ms ease;
+}
 
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn,
+  .card {
+    transition: none;
+    transform: none !important;
+  }
+
+  .page-enter-active,
+  .page-leave-active {
+    transition: none;
+  }
+}
