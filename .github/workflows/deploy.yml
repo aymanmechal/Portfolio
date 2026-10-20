@@ -25,7 +25,9 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      # npm install plutôt que npm ci : le lockfile généré sous Windows omet
+      # la dépendance optionnelle `sass` de sass-embedded requise sous Linux.
+      - run: npm install --no-audit --no-fund
 
       - name: Generate static site
         run: npx nuxi generate
